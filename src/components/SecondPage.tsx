@@ -45,23 +45,28 @@ const SecondPage: React.FC = () => {
       {/* Ribbon */}
       <Ribbon shape={shape} color={color} setShape={setShape} setColor={setColor} />
 
+      {/* Main Content */}
       <div className="flex flex-1 relative">
-        {/* Canvas */}
+        {/* Chatbot on the left */}
+        <div className="w-1/4 border-r border-gray-300">
+          <Chatbot onCommand={handleCommand} />
+        </div>
+
+        {/* Canvas in center */}
         <div className="flex-1 flex justify-center items-center">
           <CanvasArea shape={shape} color={color} replayStep={replayStep} />
         </div>
 
-        {/* Transcript */}
-        <TranscriptPanel
-          steps={transcript}
-          onReplay={(cmdText) => {
-            const idx = transcript.findIndex(s => s.text === cmdText);
-            handleReplay(idx);
-          }}
-        />
-
-        {/* Chatbot */}
-        <Chatbot onCommand={handleCommand} />
+        {/* Transcript on the right */}
+        <div className="w-1/4 border-l border-gray-300">
+          <TranscriptPanel
+            steps={transcript}
+            onReplay={(cmdText) => {
+              const idx = transcript.findIndex(s => s.text === cmdText);
+              handleReplay(idx);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

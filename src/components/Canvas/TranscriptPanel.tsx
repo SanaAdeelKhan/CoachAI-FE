@@ -5,8 +5,8 @@ import html2canvas from "html2canvas";
 interface TranscriptStep {
   text: string;
   timestamp: string;
-  shape?: string; // optional if you want to include shape info
-  color?: string; // optional if you want to include color info
+  shape?: string;
+  color?: string;
 }
 
 interface TranscriptPanelProps {
@@ -31,7 +31,16 @@ const TranscriptPanel: React.FC<TranscriptPanelProps> = ({ steps, onReplay }) =>
 
   return (
     <div className="w-64 h-full border-l border-gray-300 overflow-y-auto p-2 flex flex-col">
-      <h2 className="font-bold mb-2">Transcript</h2>
+      {/* Header with Export Button on Right */}
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="font-bold">Transcript</h2>
+        <button
+          onClick={exportToPDF}
+          className="px-2 py-1 bg-blue-600 text-white rounded shadow hover:bg-blue-700 text-sm"
+        >
+          Export
+        </button>
+      </div>
 
       {/* Transcript content */}
       <div id="transcript-content" className="flex-1 overflow-y-auto">
@@ -46,14 +55,6 @@ const TranscriptPanel: React.FC<TranscriptPanelProps> = ({ steps, onReplay }) =>
           </div>
         ))}
       </div>
-
-      {/* Export button */}
-      <button
-        onClick={exportToPDF}
-        className="mt-2 px-3 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700"
-      >
-        Export to PDF
-      </button>
     </div>
   );
 };
