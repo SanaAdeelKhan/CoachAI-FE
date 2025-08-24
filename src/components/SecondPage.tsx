@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Ribbon from "./Canvas/Ribbon";
 import CanvasArea from "./Canvas/CanvasArea";
-import ChatBot from "./Canvas/Chatbot";
+import Chatbot from "./Canvas/Chatbot";
 import TranscriptPanel from "./Canvas/TranscriptPanel";
 
 const SecondPage: React.FC = () => {
@@ -60,8 +60,8 @@ const SecondPage: React.FC = () => {
           }}
         />
 
-        {/* ChatBot */}
-        <ChatBot onCommand={handleCommand} />
+        {/* Chatbot */}
+        <Chatbot onCommand={handleCommand} />
       </div>
     </div>
   );
