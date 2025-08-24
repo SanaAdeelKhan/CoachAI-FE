@@ -52,23 +52,17 @@ User types a natural language command like:
 
 
 ### 2. Agent Interpretation (GPT-5)
-The GPT-5 Agent converts the command into structured JSON steps:
-Example:
-```json
-[
-  { "select_tool": "circle" },
-  { "draw_shape": "center" },
-  { "apply_style": "highlight" }
-]
-3. Auto Execution on Canvas
+The GPT-5 Agent converts the command into structured JSON steps.
 
+### 3. Auto Execution on Canvas
+ 
 Steps are executed live.
 
 Canvas dims, tool highlights.
 
 Shape appears instantly—no drag & drop required.
 
-4. Transcript Logging
+### 4. Transcript Logging
 
 Each action is logged with:
 
@@ -78,17 +72,17 @@ Step description
 
 Small canvas preview
 
-5. Interactive Transcript
+### 5. Interactive Transcript
 
 Hover over a transcript step to replay that exact action visually.
 
-6. Sequential Multi-step Execution
+### 6. Sequential Multi-step Execution
 
 Complex commands (e.g., "Draw a triangle inside a circle & color it red") are broken into sub-steps.
 
 Each sub-step is executed sequentially and logged.
 
-7. Export Transcript
+### 7. Export Transcript
 
 At session end, users can export:
 
@@ -98,14 +92,14 @@ Step list with timestamps
 
 Screenshots/previews after each step (PDF/Word)
 
-8. Replay Session (Optional)
+### 8. Replay Session (Optional)
 
 Full session replay like a time-lapse for review.
 
 In short:
 CoachAI takes natural language → auto-executes on canvas → logs every step → lets users replay or export the session.
 
-Tech Stack
+### Tech Stack
 
 React + TypeScript
 
@@ -115,7 +109,7 @@ Lucide-react icons for UI
 
 React Hooks & Context API
 
-Installation
+### Installation
 
 Clone the repo:
 
@@ -123,25 +117,26 @@ git clone <your-repo-url>
 cd frontend
 
 
-Install dependencies:
+### Install dependencies:
 
 npm install
 
 
-Start the dev server:
+### Start the dev server:
 
 npm run dev
 
 
-Open the app:
+### Open the app:
 
 http://localhost:3000
 
-Build for Production
+### Build for Production
 npm run build
 npm start
 Open the app in your browser (usually http://localhost:5173).
-🛠 Technology Stack
+
+### 🛠 Technology Stack
 
 Frontend: React + TypeScript
 
@@ -153,7 +148,7 @@ PDF Export: jsPDF + html2canvas
 
 AI Assistance: GPT-5 + AIML API
 
-🔧 Usage
+### 🔧 Usage
 
 Use the Chatbot panel or Ribbon to give commands.
 
@@ -165,12 +160,12 @@ Click Export to PDF to save the session.
 
 Connect to any new app or software to get real-time, adaptive guidance powered by AI.
 
-🔗 Repositories
+### 🔗 Repositories
 
 Frontend: https://github.com/SanaAdeelKhan/CoachAI-FE
 
 Backend: https://github.com/MateehUllah/backend_coach-ai-hackathons
 
-📄 License
+### 📄 License
 
 MIT License.
